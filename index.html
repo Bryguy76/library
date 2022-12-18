@@ -22,16 +22,18 @@
 </article>
 <div class="modal hidden">
     <form action="">
-        <button type="button" id="close-modal">x</button>
-        <p>Add a book</p>
+        <div class="first-form-group">
+            <p>Add a book</p>
+            <button type="button" id="close-modal">x</button>
+        </div>
         <input type="text" name="title" id="title" placeholder="Title">
         <input type="text" name="author" id="author" placeholder="Author">
         <input type="number" name="pages" id="pages" placeholder="pages">
         <div>
-        <label for="read">Read?</label>
         <input type="checkbox" name="read" id="read">
+            <label for="read">Read?</label>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" id="new-book-submit">Submit</button>
     </form>
 </div>
 </body>
