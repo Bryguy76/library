@@ -44,6 +44,13 @@ function updateLibraryDisplay(book) {
   booksSection.innerHTML += html[html.length - 1];
 }
 
+function clearInput() {
+  titleInput.value = '';
+  authorInput.value = '';
+  pagesInput.value = '';
+  readInput.value = '';
+}
+
 newBookSubmit.addEventListener('click', function () {
   event.preventDefault();
   let title = titleInput.value;
@@ -53,4 +60,5 @@ newBookSubmit.addEventListener('click', function () {
   books.push(new Book(title, author, pages, read));
   updateLibraryDisplay(books[books.length - 1]);
   toggleModal();
+  clearInput();
 });

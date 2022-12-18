@@ -41,6 +41,7 @@ article {
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    gap: 2rem;
 }
 
 button {
@@ -64,7 +65,7 @@ cursor: pointer;
 
 .books {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, 15rem);
     gap: 3rem;
 }
 
