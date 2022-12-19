@@ -141,10 +141,24 @@ input:focus {
     background: var(--mid-light);
 }
 
+.card-buttons{
+
+}
 .toggle-read {
     border-radius: 10px;
     cursor: pointer;
     background: var(--dark);
+    width:6rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
+.delete {
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--dark);
+    width:6rem;
+    height: 2rem;
 }
 
 .hidden {

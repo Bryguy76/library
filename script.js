@@ -38,12 +38,15 @@ closeModalButton.addEventListener('click', function () {
 
 function addToLibraryDisplay(book) {
   html.push(`
-      <div class="book">
+      <div id="card${book.id}" class="book">
         <h2>${book.title}</h2>
         <h3>By: ${book.author}</h3>
         <h4>Page count: ${book.pages}</h4>
         <h4 class="book${book.id}">Read: ${book.read ? 'yes' : 'no'}</h4>
+        <div class="card-buttons">
         <button class="toggle-read" id="${book.id}">Toggle Read</button>
+        <button class="delete" id="delete${book.id}">Delete book</button>
+        </div>
       </div>
     `);
   booksSection.innerHTML += html[html.length - 1];
@@ -64,6 +67,13 @@ function manageReadListeners() {
       .addEventListener('click', function () {
         books[book.id - 1].toggleRead();
         updateReadDisplay(book.id);
+      });
+    document
+      .getElementById(`delete${book.id}`)
+      .addEventListener('click', function () {
+        delete books[book.id - 1];
+        delete html[book.id - 1];
+        booksSection.removeChild(document.getElementById(`card${book.id}`));
       });
   });
 }
