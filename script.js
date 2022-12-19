@@ -47,7 +47,9 @@ function addToLibraryDisplay(book) {
       </div>
     `);
   booksSection.innerHTML += html[html.length - 1];
+}
 
+function manageReadListeners() {
   function updateReadDisplay(bookId) {
     if (books[bookId - 1].read) {
       document.querySelector(`.book${bookId}`).textContent = 'Read: yes';
@@ -56,10 +58,13 @@ function addToLibraryDisplay(book) {
     }
   }
 
-  document.getElementById(`${book.id}`).addEventListener('click', function () {
-    // const bookId = books.length;
-    books[book.id - 1].toggleRead();
-    updateReadDisplay(book.id);
+  books.forEach(book => {
+    document
+      .getElementById(`${book.id}`)
+      .addEventListener('click', function () {
+        books[book.id - 1].toggleRead();
+        updateReadDisplay(book.id);
+      });
   });
 }
 
@@ -78,6 +83,7 @@ newBookSubmit.addEventListener('click', function () {
   let read = readInput.value;
   books.push(new Book(id, title, author, pages, read));
   addToLibraryDisplay(books[books.length - 1]);
+  manageReadListeners();
   toggleModal();
   clearInput();
 });
