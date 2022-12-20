@@ -82,7 +82,7 @@ function clearInput() {
   titleInput.value = '';
   authorInput.value = '';
   pagesInput.value = '';
-  readInput.value = null;
+  readInput.checked = false;
 }
 newBookSubmit.addEventListener('click', function () {
   event.preventDefault();
@@ -90,7 +90,7 @@ newBookSubmit.addEventListener('click', function () {
   let title = titleInput.value;
   let author = authorInput.value;
   let pages = pagesInput.value;
-  let read = readInput.value;
+  let read = readInput.checked;
   books.push(new Book(id, title, author, pages, read));
   addToLibraryDisplay(books[books.length - 1]);
   manageReadListeners();
