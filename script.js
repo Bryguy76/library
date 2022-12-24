@@ -29,12 +29,9 @@ class Book {
 function toggleModal() {
   modalWindow.classList.toggle('hidden');
 }
-addBookButton.addEventListener('click', function () {
-  toggleModal();
-});
-closeModalButton.addEventListener('click', function () {
-  toggleModal();
-});
+addBookButton.addEventListener('click', toggleModal);
+
+closeModalButton.addEventListener('click', toggleModal);
 
 function addToLibraryDisplay(book) {
   html.push(`
